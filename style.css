@@ -2,19 +2,37 @@ html {
   scroll-behavior: smooth;
 }
 body{
-font-family:Arial;
-margin:0;
-background:#f5f7fb;
-color:#222;
+  font-family: Arial, sans-serif;
+  margin:0;
+  background:#f5f7fb;
+  color:#222;
+}
+
+.hero{
+  text-align:center;
+  padding:120px 20px;
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+  color:white;
 }
 
 .navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:10px 40px;
-background:white;
-border-bottom:1px solid #ddd;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 40px;
+  background:white;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.logo img{
+  height:35px;
+}
+
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
 }
 
 .logo{
@@ -43,14 +61,29 @@ color:white;
 text-decoration:none;
 }
 
-.hero{
-text-align:center;
-padding:100px;
-}
-
 section{
 padding:50px;
 text-align:center;
+}
+
+section{
+  padding:80px 20px;
+  text-align:center;
+}
+
+.projects{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  width:260px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
 .section {
@@ -62,10 +95,6 @@ text-align:center;
 .section.show {
   opacity: 1;
   transform: translateY(0);
-}
-
-.hero h2 {
-  animation: fadeIn 1.5s ease-in-out;
 }
 
 @keyframes fadeIn {
