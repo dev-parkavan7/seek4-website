@@ -8,11 +8,33 @@ background:#0f172a;
 color:white;
 }
 
-header{
+.navbar{
 display:flex;
 justify-content:space-between;
-padding:20px;
-background:#1e293b;
+align-items:center;
+padding:10px 40px;
+background:white;
+border-bottom:1px solid #ddd;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:20px;
+font-weight:bold;
+color:#2563eb;
+}
+
+.logo img{
+height:40px;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+font-weight:500;
 }
 
 nav a{
