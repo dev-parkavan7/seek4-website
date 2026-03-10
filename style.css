@@ -29,14 +29,16 @@ body{
 }
 
 nav a{
-  margin-left:20px;
+  margin-left:25px;
   text-decoration:none;
   color:#2563eb;
   font-weight:600;
+  font-size:16px;
 }
 
-nav a:hover{
-  color:#1d4ed8;
+nav{
+  display:flex;
+  align-items:center;
 }
 
 .logo{
