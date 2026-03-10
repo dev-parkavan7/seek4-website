@@ -16,12 +16,12 @@ body{
 }
 
 .navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 40px;
-  background:white;
-  border-bottom:1px solid #e5e7eb;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 40px;
+background:white;
+border-bottom:1px solid #e5e7eb;
 }
 
 .logo img{
