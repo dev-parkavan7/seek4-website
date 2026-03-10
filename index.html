@@ -24,7 +24,10 @@
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#projects">Projects</a>
-<a href="auth.html">Sign In</a>
+
+<a href="auth.html" id="loginLink">Sign In</a>
+<a href="#" id="logoutBtn" onclick="logout()" style="display:none;">Logout</a>
+
 </nav>
 
 </header>
@@ -95,6 +98,28 @@ let user = localStorage.getItem("loggedUser")
 if(user){
 document.getElementById("welcomeMessage").innerText =
 "Welcome back, " + user
+}
+
+let user = localStorage.getItem("loggedUser")
+
+if(user){
+
+document.getElementById("welcomeMessage").innerText =
+"Welcome back, " + user
+
+document.getElementById("loginLink").style.display="none"
+document.getElementById("logoutBtn").style.display="inline"
+
+}
+
+function logout(){
+
+localStorage.removeItem("loggedUser")
+
+alert("Logged out successfully")
+
+location.reload()
+
 }
 
 </script>
