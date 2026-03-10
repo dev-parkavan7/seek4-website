@@ -34,6 +34,8 @@
 <h1>Welcome to Seek 4</h1>
 <p>Personal Technology Brand by Parkavan</p>
 
+<p id="welcomeMessage"></p>
+
 </section>
 
 <section id="about">
@@ -86,5 +88,16 @@ web applications, automation tools, and AI-based solutions.
 
 </footer>
 
+  <script>
+
+let user = localStorage.getItem("loggedUser")
+
+if(user){
+document.getElementById("welcomeMessage").innerText =
+"Welcome back, " + user
+}
+
+</script>
+  
 </body>
 </html>
