@@ -2,9 +2,9 @@
 <html>
 <head>
 <title>Seek 4 | Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
 body{
 font-family:Arial;
 background:#f5f7fb;
@@ -50,9 +50,7 @@ a{
 color:#2563eb;
 cursor:pointer;
 }
-
 </style>
-
 </head>
 
 <body>
@@ -64,40 +62,51 @@ cursor:pointer;
 <input type="email" id="email" placeholder="Email">
 <input type="password" id="password" placeholder="Password">
 
-<button id="mainBtn" onclick="login()">Login</button>
+<button id="mainBtn">Login</button>
 
 <p id="toggleText">
 Don't have an account?
-<a onclick="showSignup()">Sign Up</a>
+<a id="signupLink">Sign Up</a>
 </p>
 
 </div>
 
 <script>
 
+let mainBtn = document.getElementById("mainBtn")
+let title = document.getElementById("title")
+let toggleText = document.getElementById("toggleText")
+let signupLink = document.getElementById("signupLink")
+
+mainBtn.onclick = login
+
+signupLink.onclick = showSignup
+
 function showSignup(){
 
-document.getElementById("title").innerText="Sign Up"
+title.innerText="Sign Up"
 
-document.getElementById("mainBtn").innerText="Create Account"
+mainBtn.innerText="Create Account"
+mainBtn.onclick = signup
 
-document.getElementById("mainBtn").setAttribute("onclick","signup()")
+toggleText.innerHTML =
+'Already have an account? <a id="loginLink">Login</a>'
 
-document.getElementById("toggleText").innerHTML =
-'Already have an account? <a onclick="showLogin()">Login</a>'
+document.getElementById("loginLink").onclick = showLogin
 
 }
 
 function showLogin(){
 
-document.getElementById("title").innerText="Login"
+title.innerText="Login"
 
-document.getElementById("mainBtn").innerText="Login"
+mainBtn.innerText="Login"
+mainBtn.onclick = login
 
-document.getElementById("mainBtn").setAttribute("onclick","login()")
+toggleText.innerHTML =
+"Don't have an account? <a id='signupLink'>Sign Up</a>"
 
-document.getElementById("toggleText").innerHTML =
-"Don't have an account? <a onclick='showSignup()'>Sign Up</a>"
+document.getElementById("signupLink").onclick = showSignup
 
 }
 
