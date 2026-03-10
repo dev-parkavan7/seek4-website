@@ -117,7 +117,7 @@ let savedPassword=localStorage.getItem("userPassword")
 
 if(email===savedEmail && password===savedPassword){
 
-alert("Login successful")
+localStorage.setItem("loggedUser", email)
 
 window.location.href="index.html"
 
