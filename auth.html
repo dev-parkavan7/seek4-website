@@ -1,61 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Seek 4 | Sign In</title>
-<link rel="icon" type="image/png" href="favicon.png">
+<title>Seek 4 | Login</title>
+
 <style>
 
 body{
-font-family: Arial, sans-serif;
-margin:0;
+font-family:Arial;
 background:#f5f7fb;
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
+margin:0;
 }
 
 .container{
 background:white;
 padding:40px;
-border-radius:12px;
-width:340px;
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
+border-radius:10px;
+width:320px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 text-align:center;
-}
-
-.logo{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:10px;
-margin-bottom:20px;
-}
-
-.logo img{
-height:40px;
-}
-
-h2{
-margin-bottom:20px;
 }
 
 input{
 width:100%;
 padding:10px;
 margin:10px 0;
-border:1px solid #ddd;
-border-radius:6px;
+border:1px solid #ccc;
+border-radius:5px;
 }
 
 button{
 width:100%;
-padding:12px;
+padding:10px;
 background:#2563eb;
 border:none;
 color:white;
-border-radius:6px;
-font-size:16px;
+border-radius:5px;
 cursor:pointer;
 }
 
@@ -63,14 +46,13 @@ button:hover{
 background:#1d4ed8;
 }
 
-.switch{
-margin-top:15px;
-font-size:14px;
-}
-
 a{
 color:#2563eb;
-text-decoration:none;
+cursor:pointer;
+}
+
+.hidden{
+display:none;
 }
 
 </style>
@@ -81,28 +63,73 @@ text-decoration:none;
 
 <div class="container">
 
-<div class="logo">
-<img src="logo.png">
-<h3>Seek 4</h3>
-</div>
+<h2 id="title">Login</h2>
 
-<h2>Sign In</h2>
+<input type="email" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Password">
 
-<input type="email" placeholder="Email">
+<button onclick="login()">Login</button>
 
-<input type="password" placeholder="Password">
-
-<button>Login</button>
-
-<p style="margin-top:10px">
-<a href="index.html">← Back to Home</a>
+<p id="toggleText">
+Don't have an account?
+<a onclick="showSignup()">Sign Up</a>
 </p>
 
-<div class="switch">
-Don't have an account? <a href="#">Sign Up</a>
 </div>
 
-</div>
+<script>
+
+function showSignup(){
+document.getElementById("title").innerText="Sign Up"
+document.querySelector("button").innerText="Create Account"
+document.querySelector("button").setAttribute("onclick","signup()")
+document.getElementById("toggleText").innerHTML='Already have an account? <a onclick="showLogin()">Login</a>'
+}
+
+function showLogin(){
+document.getElementById("title").innerText="Login"
+document.querySelector("button").innerText="Login"
+document.querySelector("button").setAttribute("onclick","login()")
+document.getElementById("toggleText").innerHTML='Don\\'t have an account? <a onclick="showSignup()">Sign Up</a>'
+}
+
+function signup(){
+
+let email=document.getElementById("email").value
+let password=document.getElementById("password").value
+
+localStorage.setItem("userEmail",email)
+localStorage.setItem("userPassword",password)
+
+alert("Account created successfully")
+
+showLogin()
+
+}
+
+function login(){
+
+let email=document.getElementById("email").value
+let password=document.getElementById("password").value
+
+let savedEmail=localStorage.getItem("userEmail")
+let savedPassword=localStorage.getItem("userPassword")
+
+if(email===savedEmail && password===savedPassword){
+
+alert("Login successful")
+
+window.location.href="index.html"
+
+}else{
+
+alert("Invalid email or password")
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
