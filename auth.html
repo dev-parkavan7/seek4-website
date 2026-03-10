@@ -51,10 +51,6 @@ color:#2563eb;
 cursor:pointer;
 }
 
-.hidden{
-display:none;
-}
-
 </style>
 
 </head>
@@ -68,7 +64,7 @@ display:none;
 <input type="email" id="email" placeholder="Email">
 <input type="password" id="password" placeholder="Password">
 
-<button onclick="login()">Login</button>
+<button id="mainBtn" onclick="login()">Login</button>
 
 <p id="toggleText">
 Don't have an account?
@@ -80,17 +76,29 @@ Don't have an account?
 <script>
 
 function showSignup(){
+
 document.getElementById("title").innerText="Sign Up"
-document.querySelector("button").innerText="Create Account"
-document.querySelector("button").setAttribute("onclick","signup()")
-document.getElementById("toggleText").innerHTML='Already have an account? <a onclick="showLogin()">Login</a>'
+
+document.getElementById("mainBtn").innerText="Create Account"
+
+document.getElementById("mainBtn").setAttribute("onclick","signup()")
+
+document.getElementById("toggleText").innerHTML =
+'Already have an account? <a onclick="showLogin()">Login</a>'
+
 }
 
 function showLogin(){
+
 document.getElementById("title").innerText="Login"
-document.querySelector("button").innerText="Login"
-document.querySelector("button").setAttribute("onclick","login()")
-document.getElementById("toggleText").innerHTML='Don\\'t have an account? <a onclick="showSignup()">Sign Up</a>'
+
+document.getElementById("mainBtn").innerText="Login"
+
+document.getElementById("mainBtn").setAttribute("onclick","login()")
+
+document.getElementById("toggleText").innerHTML =
+"Don't have an account? <a onclick='showSignup()'>Sign Up</a>"
+
 }
 
 function signup(){
@@ -98,8 +106,13 @@ function signup(){
 let email=document.getElementById("email").value
 let password=document.getElementById("password").value
 
-localStorage.setItem("userEmail",email)
-localStorage.setItem("userPassword",password)
+if(email==="" || password===""){
+alert("Please enter email and password")
+return
+}
+
+localStorage.setItem("userEmail", email)
+localStorage.setItem("userPassword", password)
 
 alert("Account created successfully")
 
@@ -118,6 +131,8 @@ let savedPassword=localStorage.getItem("userPassword")
 if(email===savedEmail && password===savedPassword){
 
 localStorage.setItem("loggedUser", email)
+
+alert("Login successful")
 
 window.location.href="index.html"
 
