@@ -1,6 +1,9 @@
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
+
+/* Body */
 body{
   font-family: Arial, sans-serif;
   margin:0;
@@ -8,24 +11,35 @@ body{
   color:#222;
 }
 
-.hero{
-  text-align:center;
-  padding:120px 20px;
-  background:linear-gradient(135deg,#2563eb,#60a5fa);
-  color:white;
+/* Navbar */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 40px;
+  background:white;
+  border-bottom:1px solid #e5e7eb;
 }
 
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:12px 40px;
-background:white;
-border-bottom:1px solid #e5e7eb;
+/* Logo */
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:20px;
+  font-weight:bold;
+  color:#2563eb;
 }
 
 .logo img{
   height:35px;
+  width:auto;
+}
+
+/* Navigation links */
+nav{
+  display:flex;
+  align-items:center;
 }
 
 nav a{
@@ -34,50 +48,28 @@ nav a{
   color:#2563eb;
   font-weight:600;
   font-size:16px;
+  transition:0.3s;
 }
 
-nav{
-  display:flex;
-  align-items:center;
+nav a:hover{
+  color:#1d4ed8;
 }
 
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-font-size:20px;
-font-weight:bold;
-color:#2563eb;
+/* Hero section */
+.hero{
+  text-align:center;
+  padding:120px 20px;
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+  color:white;
 }
 
-.logo img{
-height:35px;
-width:auto;
-}
-
-nav a{
-margin-left:20px;
-text-decoration:none;
-color:#333;
-font-weight:500;
-}
-
-nav a{
-margin-left:20px;
-color:white;
-text-decoration:none;
-}
-
-section{
-padding:50px;
-text-align:center;
-}
-
+/* Sections */
 section{
   padding:80px 20px;
   text-align:center;
 }
 
+/* Projects container */
 .projects{
   display:flex;
   justify-content:center;
@@ -85,14 +77,45 @@ section{
   flex-wrap:wrap;
 }
 
+/* Project cards */
 .card{
   background:white;
   padding:25px;
   border-radius:10px;
   width:260px;
   box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  transition:0.3s;
 }
 
+.card:hover{
+  transform:translateY(-5px);
+}
+
+/* Skills list */
+ul{
+  list-style:none;
+  padding:0;
+}
+
+ul li{
+  display:inline-block;
+  background:#2563eb;
+  color:white;
+  padding:8px 15px;
+  margin:5px;
+  border-radius:5px;
+}
+
+/* Footer */
+footer{
+  margin-top:40px;
+  padding:20px;
+  background:white;
+  border-top:1px solid #e5e7eb;
+  text-align:center;
+}
+
+/* Fade-in animation */
 .section {
   opacity: 0;
   transform: translateY(40px);
@@ -102,6 +125,11 @@ section{
 .section.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Hero animation */
+.hero h1{
+  animation:fadeIn 1.5s ease-in-out;
 }
 
 @keyframes fadeIn {
