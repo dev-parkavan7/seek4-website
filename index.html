@@ -122,6 +122,28 @@ location.reload()
 
 }
 
+<script>
+
+let user = localStorage.getItem("loggedUser")
+
+if(user){
+
+document.getElementById("loginLink").style.display="none"
+
+document.getElementById("logoutBtn").style.display="inline"
+
+}
+
+function logout(){
+
+localStorage.removeItem("loggedUser")
+
+location.reload()
+
+}
+
+</script>
+
 </script>
   
 </body>
