@@ -92,21 +92,14 @@ web applications, automation tools, and AI-based solutions.
 
 </footer>
 
-  <script>
+ <script>
 
-let user = localStorage.getItem("loggedUser")
+let loggedUser = localStorage.getItem("loggedUser")
 
-if(user){
-document.getElementById("welcomeMessage").innerText =
-"Welcome back, " + user
-}
-
-let user = localStorage.getItem("loggedUser")
-
-if(user){
+if(loggedUser){
 
 document.getElementById("welcomeMessage").innerText =
-"Welcome back, " + user
+"Welcome back, " + loggedUser
 
 document.getElementById("loginLink").style.display="none"
 document.getElementById("logoutBtn").style.display="inline"
@@ -118,24 +111,6 @@ function logout(){
 localStorage.removeItem("loggedUser")
 
 alert("Logged out successfully")
-
-location.reload()
-
-}
-
-let user = localStorage.getItem("loggedUser")
-
-if(user){
-
-document.getElementById("loginLink").style.display="none"
-
-document.getElementById("logoutBtn").style.display="inline"
-
-}
-
-function logout(){
-
-localStorage.removeItem("loggedUser")
 
 location.reload()
 
