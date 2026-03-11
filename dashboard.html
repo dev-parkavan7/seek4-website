@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Seek 4 | Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">
+<img src="logo.png" alt="Seek4 Logo">
+<span>Seek 4</span>
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="#" onclick="logout()">Logout</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1 id="welcomeText"></h1>
+
+<p>Welcome to your dashboard.</p>
+
+</section>
+
+<script>
+
+let user = localStorage.getItem("loggedUser")
+
+if(!user){
+
+window.location.href="auth.html"
+
+}
+
+document.getElementById("welcomeText").innerText =
+"Welcome " + user
+
+function logout(){
+
+localStorage.removeItem("loggedUser")
+
+window.location.href="auth.html"
+
+}
+
+</script>
+
+</body>
+</html>
