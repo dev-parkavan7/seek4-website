@@ -190,3 +190,24 @@ transition:0.3s;
 .card:hover{
 transform:translateY(-5px);
 }
+
+/* Dark Mode */
+
+.dark-mode{
+background:#111827;
+color:#f9fafb;
+}
+
+.dark-mode .navbar{
+background:#1f2937;
+border-bottom:1px solid #374151;
+}
+
+.dark-mode .card{
+background:#1f2937;
+color:white;
+}
+
+.dark-mode footer{
+background:#1f2937;
+}
