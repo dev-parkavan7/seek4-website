@@ -40,20 +40,18 @@
 let user = localStorage.getItem("loggedUser")
 
 if(!user){
-
 window.location.href="auth.html"
-
 }
 
+// Extract name before @
+let name = user.split("@")[0]
+
 document.getElementById("welcomeText").innerText =
-"Welcome " + user
+"Welcome " + name
 
 function logout(){
-
 localStorage.removeItem("loggedUser")
-
 window.location.href="auth.html"
-
 }
 
 </script>
