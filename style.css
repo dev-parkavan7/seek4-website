@@ -284,3 +284,57 @@ width:90%;
 }
 
 }
+
+/* Project Cards */
+
+.project-card{
+background:white;
+padding:20px;
+border-radius:12px;
+width:280px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+transition:0.3s;
+text-align:center;
+}
+
+.project-card img{
+width:100%;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+.project-card:hover{
+transform:translateY(-5px);
+}
+
+.project-card h3{
+color:#2563eb;
+margin-bottom:10px;
+}
+
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:8px 15px;
+background:#2563eb;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+
+.btn:hover{
+background:#1d4ed8;
+}
+
+.dark-mode .project-card{
+background:#1f2937;
+color:white;
+}
+
+@media (max-width:768px){
+
+.project-card{
+width:90%;
+}
+
+}
