@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Seek 4 | Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">
+<img src="logo.png" alt="Seek4 Logo">
+<span>Seek 4</span>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="contact.html">Contact</a>
+<a href="#" onclick="logout()">Logout</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Contact Me</h1>
+<p>Let’s work together 🚀</p>
+
+</section>
+
+<section>
+
+<h2>Send a Message</h2>
+
+<form onsubmit="sendMessage(event)">
+
+<input type="text" placeholder="Your Name" id="name" required>
+<input type="email" placeholder="Your Email" id="email" required>
+<textarea placeholder="Your Message" id="message" rows="5" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+<p id="successMsg" style="color:green; display:none;">
+Message sent successfully!
+</p>
+
+</section>
+
+<script>
+
+function sendMessage(e){
+e.preventDefault()
+
+let name = document.getElementById("name").value
+
+document.getElementById("successMsg").style.display = "block"
+
+alert("Thank you " + name + ", your message has been sent!")
+
+document.querySelector("form").reset()
+}
+
+function logout(){
+localStorage.removeItem("loggedUser")
+window.location.href="auth.html"
+}
+
+</script>
+
+</body>
+</html>
