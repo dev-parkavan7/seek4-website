@@ -222,7 +222,78 @@ updateCounter()
 
 })
 
+function toggleChat(){
+
+let body = document.getElementById("chatBody")
+
+body.style.display = body.style.display === "block" ? "none" : "block"
+
+}
+
+function sendMessage(){
+
+let input = document.getElementById("chatInput")
+let msg = input.value
+
+if(msg === "") return
+
+let chat = document.getElementById("chatMessages")
+
+chat.innerHTML += "<p><b>You:</b> " + msg + "</p>"
+
+let reply = getReply(msg)
+
+setTimeout(()=>{
+chat.innerHTML += "<p><b>Bot:</b> " + reply + "</p>"
+chat.scrollTop = chat.scrollHeight
+},500)
+
+input.value = ""
+
+}
+
+function getReply(msg){
+
+msg = msg.toLowerCase()
+
+if(msg.includes("hello")){
+return "Hello! Welcome to Seek 4 👋"
+}
+
+if(msg.includes("services")){
+return "We offer web development, UI design, and automation tools."
+}
+
+if(msg.includes("contact")){
+return "You can contact us through the Contact page."
+}
+
+if(msg.includes("price")){
+return "Pricing depends on your project. Please contact us."
+}
+
+return "I'm here to help! Ask about services or projects."
+
+}
+
 </script>
-  
+
+<div class="chatbot">
+
+<div class="chat-header" onclick="toggleChat()">
+💬 Chat with Seek 4
+</div>
+
+<div class="chat-body" id="chatBody">
+
+<div id="chatMessages"></div>
+
+<input type="text" id="chatInput" placeholder="Ask something...">
+<button onclick="sendMessage()">Send</button>
+
+</div>
+
+</div>
+ 
 </body>
 </html>
