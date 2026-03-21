@@ -368,3 +368,55 @@ font-size:16px;
 .dark-mode .stats{
 background:#1f2937;
 }
+
+/* Chatbot */
+
+.chatbot{
+position:fixed;
+bottom:20px;
+right:20px;
+width:300px;
+font-family:Arial;
+}
+
+.chat-header{
+background:#2563eb;
+color:white;
+padding:10px;
+cursor:pointer;
+border-radius:10px 10px 0 0;
+text-align:center;
+}
+
+.chat-body{
+display:none;
+background:white;
+border:1px solid #ccc;
+border-top:none;
+padding:10px;
+border-radius:0 0 10px 10px;
+}
+
+#chatMessages{
+height:200px;
+overflow-y:auto;
+margin-bottom:10px;
+}
+
+#chatMessages p{
+margin:5px 0;
+}
+
+#chatInput{
+width:70%;
+padding:5px;
+}
+
+.chat-body button{
+padding:5px;
+}
+
+.dark-mode .chat-body{
+background:#1f2937;
+color:white;
+}
