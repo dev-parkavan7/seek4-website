@@ -420,3 +420,87 @@ padding:5px;
 background:#1f2937;
 color:white;
 }
+
+/* Gradient Background */
+body{
+  background: linear-gradient(135deg,#eef2ff,#f8fafc);
+}
+
+/* Hero */
+.hero{
+  text-align:center;
+  padding:120px 20px;
+}
+
+.hero h1{
+  font-size:42px;
+  font-weight:700;
+}
+
+.highlight{
+  color:#2563eb;
+}
+
+.hero p{
+  margin-top:10px;
+  font-size:18px;
+  color:#555;
+}
+
+/* Buttons */
+.hero-buttons{
+  margin-top:20px;
+}
+
+.btn-primary{
+  background:#2563eb;
+  color:white;
+  padding:12px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  margin-right:10px;
+  display:inline-block;
+}
+
+.btn-primary:hover{
+  background:#1d4ed8;
+}
+
+.btn-secondary{
+  background:white;
+  color:#2563eb;
+  padding:12px 20px;
+  border-radius:8px;
+  border:1px solid #2563eb;
+  text-decoration:none;
+}
+
+/* Glass Effect Cards */
+.service-card, .project-card{
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.7);
+}
+
+/* Section spacing */
+section{
+  margin:60px 0;
+}
+
+.service-card, .project-card{
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.dark-mode{
+  background:#0f172a;
+  color:white;
+}
+
+.dark-mode .hero p{
+  color:#cbd5f5;
+}
+
+.dark-mode .service-card,
+.dark-mode .project-card{
+  background:#1e293b;
+}
