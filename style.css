@@ -504,3 +504,43 @@ section{
 .dark-mode .project-card{
   background:#1e293b;
 }
+
+/* Menu icon */
+.menu-icon{
+display:none;
+font-size:24px;
+cursor:pointer;
+}
+
+/* Mobile styles */
+@media (max-width:768px){
+
+.menu-icon{
+display:block;
+}
+
+nav{
+display:none;
+flex-direction:column;
+width:100%;
+background:white;
+position:absolute;
+top:60px;
+left:0;
+padding:20px;
+border-top:1px solid #ddd;
+}
+
+nav a, nav button{
+margin:10px 0;
+}
+
+nav.active{
+display:flex;
+}
+
+}
+
+.dark-mode nav{
+background:#1f2937;
+}
