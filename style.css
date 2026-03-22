@@ -529,6 +529,7 @@ top:60px;
 left:0;
 padding:20px;
 border-top:1px solid #ddd;
+z-index:1000;
 }
 
 nav a, nav button{
@@ -539,8 +540,14 @@ nav.active{
 display:flex;
 }
 
+/* 🔥 Dark mode override */
+.dark-mode nav{
+background:#1f2937 !important;
+border-top:1px solid #374151;
 }
 
-.dark-mode nav{
-background:#1f2937;
+.dark-mode nav a{
+color:white;
+}
+
 }
